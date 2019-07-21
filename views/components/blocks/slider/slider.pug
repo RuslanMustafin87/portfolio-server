@@ -1,0 +1,61 @@
+.slider
+                    .slider__right-top
+                            ul.slider__container
+                                li.slider__item.slide__active
+                                    img.slider__img(src=require('../../../images/slide_1.png'))
+                                li.slider__item
+                                    img.slider__img(src=require('../../../images/slide_2.png'))
+                                li.slider__item
+                                    img.slider__img(src=require('../../../images/slide_3.png'))
+                    .slider__left
+                        .slider__left-center
+                            ul.slider__left-list.slider-title-list
+                                li.slider-title-list__item.slider-title-list__item_active
+                                    h1.title.title_color-gray.title_font-size-35.title_text-transform-uppercase 
+                                        span#popup-text 
+                                            - var titleChars = 'Сайт школы онлайн-образования'.split('');
+                                            for item in titleChars
+                                                span.popup-text_char= item
+                                    .slider__line.line
+                                    .slider__text
+                                        span Html, CSS, Javascript, Node.js
+                                    a.slider__link(href='#')
+                                li.slider-title-list__item
+                                    h1.title.title_color-gray.title_font-size-35.title_text-transform-uppercase 
+                                        span#popup-text
+                                            - var titleChars = 'Сайт студии мебели'.split('');
+                                            for item in titleChars
+                                                span.popup-text_char= item
+                                    .slider__line.line
+                                    .slider__text
+                                        span Html, CSS, Javascript, Vue.js
+                                    a.slider__link(href='#')
+                                li.slider-title-list__item
+                                    h1.title.title_color-gray.title_font-size-35.title_text-transform-uppercase 
+                                        span#popup-text
+                                            - var titleChars = 'Сайт фитнес центра'.split('');
+                                            for item in titleChars
+                                                span.popup-text_char= item
+                                    .slider__line.line
+                                    .slider__text
+                                        span Html, CSS, Javascript
+                                    a.slider__link(href='#')
+                    .slider__right-bottom.clearfix
+                        .slider__slide-down.slider-vert-roll
+                            ul.slider__container-down
+                                li.slider__item-down.slider__item_backgroud-1
+                                    .slider__item-color
+                                li.slider__item-down.slider__item_backgroud-2.slider-vert-roll__slide-active_down
+                                    .slider__item-color
+                                li.slider__item-down.slider__item_backgroud-3
+                                    .slider__item-color
+                            img.slider__arrow-down.arrow(src=('./images/icon/arrow_down.svg'))
+                        .slider__slide-up.slider-vert-roll
+                            ul.slider__container-up
+                                li.slider__item-up.slider__item_backgroud-3.slider-vert-roll__slide-active_up
+                                    .slider__item-color
+                                li.slider__item-up.slider__item_backgroud-2
+                                    .slider__item-color
+                                li.slider__item-up.slider__item_backgroud-1
+                                    .slider__item-color
+                            img.slider__arrow-up.arrow(src=('./images/icon/arrow_down.svg'))
