@@ -1,20 +1,21 @@
 extends ../base
 
 block  var
-    - var title = "Добро пожаловать!"
+    - var title = "Блог"
     - var authorDescription = 'Статьи, которые я написал'
+    - var page = "blog"
     
 block content
     main.main.main__blog
-        include ../../components/blocks/hamburger_menu/hamburger_menu.pug
+        include ../components/blocks/hamburger_menu/hamburger_menu.pug
         section.hero-blog
             .blog__social
-                include ../../components/blocks/social/social
+                include ../components/blocks/social/social
             .blog__hamburger.hamburger-icon
-                include ../../images/icons/hamburger.svg
+                include ../../public/assets/images/icons/hamburger.svg
             .blog__user
                 .author-title
-                    img.author-title__img(src=require('../../images/avatar_photo.jpg') alt='Руслан Мустафин')
+                    img.author-title__img(src=('/assets/images/avatar_photo.jpg') alt='Руслан Мустафин')
                     .author-title__name Руслан Мустафин
                     .author-title__description Сайты, которые я написал
             svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none" class="hero__traingle")
@@ -43,7 +44,7 @@ block content
                                 br
                                 br
                                 p Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
-                            img(src=require("../../images/code_pic.png") class="blog-content__code-pic")
+                            img(src=("/assets/images/code_pic.png") class="blog-content__code-pic")
                             .blog-content__line
                             .blog__content-item.title.title_color-gray.title_text-align-left.title_font-size-35 Приемы верстки, без которых не обходится не один сайт
                             time.blog-content__time 22 ноября 2017
@@ -69,7 +70,7 @@ block content
                                 br
                                 p Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
             .blog-content__bottom.blog__footer
-                include ../../components/blocks/footer/footer        
+                include ../components/blocks/footer/footer        
 
         
 
