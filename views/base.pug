@@ -7,11 +7,11 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title #{title}
-        link(rel="stylesheet" href="/dist/common.css")
-        link(rel="stylesheet" href=`/dist/${page}.css`)
+        link(rel="stylesheet" href="/assets/common.css")
+        link(rel="stylesheet" href=`/assets/${page}.css`)
     body
         .wrapper
             block content
         
-        script(src="dist/js/common.js" defer)
-        script(src=`dist/js/${page}.js` defer)
+        script(src="/assets/js/common.js" defer)
+        script(src=`/assets/js/${page}.js` defer)
