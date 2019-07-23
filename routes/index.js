@@ -7,4 +7,9 @@ router.get('/', function(req, res, next) {
   // res.sendFile(process.cwd() + '/public/dist/index.html', { title: 'Express' });
 });
 
+router.get('/portfolio.html', function(req, res, next) {
+  res.render('portfolio/portfolio', { title: 'Express' });
+  // res.sendFile(process.cwd() + '/public/dist/index.html', { title: 'Express' });
+});
+
 module.exports = router;
