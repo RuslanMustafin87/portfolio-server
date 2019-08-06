@@ -6,7 +6,7 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        title #{title}
+        title= title
         link(rel="stylesheet" href="/assets/common.css")
         link(rel="stylesheet" href=`/assets/${page}.css`)
         <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/icons-513fb071908cfb53e8bef691fe8c12b0/apple-touch-icon-57x57.png">
@@ -39,6 +39,7 @@ html(lang="en")
         <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="/assets/images/icons-513fb071908cfb53e8bef691fe8c12b0/apple-touch-startup-image-1536x2008.png">
     body
         .wrapper
+            include ./components/blocks/preloader/preloader
             block content
         
         script(src="/assets/js/common.js" defer)
