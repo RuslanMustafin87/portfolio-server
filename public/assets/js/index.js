@@ -203,8 +203,32 @@ window.onload = function () {
   welAuthor.style.transform = 'perspective(600px) rotateX(0deg)';
   setTimeout(function () {
     welAuthor.style.transformOrigin = '50% 50%';
-  }, 1800); // videoResize();
-}; // window.addEventListener('resize', videoResize);
+  }, 1800);
+
+  // videoDisable(); 
+  // videoResize();
+};
+
+
+function videoDisable() {
+  if (window.innerWidth > 768) {
+    // eslint-disable-next-line quotes
+    document.getElementById('video__container').innerHTML = "<video class='video' autoplay loop muted preload='auto'> <source src='../images/night.webm' type=`video/webm; codecs='vp8, vorbis'` /> <source src='../images/night.mp4' type=`video/mp4; codecs='avc1.42E01E, mp4a.40.2'` /><object data='../images/night.swf' type='application/x-shockwave-flash'><param name='movie' value='/assets/images/video.swf'></object></video>";
+    document.querySelector('.video').play();
+  }
+}
+
+// function videoDisable() {
+//   if (window.innerWidth <= 768) {
+//     // eslint-disable-next-line quotes
+//     console.log(document.getElementById('video__container'))
+//     document.getElementById('video__container').remove();
+//   }
+// }
+
+document.addEventListener("DOMContentLoaded", videoDisable);
+
+// window.addEventListener('resize', videoResize);
 // function videoResize(){
 // 	let video = document.querySelector('.welcome__video');
 // 	if (window.innerWidth >= window.innerHeight) {
