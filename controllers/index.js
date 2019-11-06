@@ -7,11 +7,14 @@ module.exports.getIndex = function (req, res) {
 
 
 module.exports.getAuth = function (req, res) {
-
+  console.log(req);
   if (!req.body.login || !req.body.password) {
     return res.redirect('/login?msg=Заполните все поля');
   }
 
-  console.log(req.body.login + ' ' + req.body.password + ' ' + req.body.capcha + ' ' + req.body.human);
+  if (!req.body.capcha){
+    return res.redirect('/?msg=В доступе отказано');
+  }
+  
   res.redirect('/');
 }

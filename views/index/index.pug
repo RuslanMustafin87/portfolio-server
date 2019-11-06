@@ -8,9 +8,9 @@ block  var
 block content
     section.section.welcome
         .welcome__video(id='video__container')
-        //- video(class='welcome__video' id='video__container' autoplay loop muted)
-        //-     source(src=('/assets/images/night.webm') type='video/webm; codecs="vp8, vorbis"')
-        //-     source(src=('/assets/images/night.mp4') type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
+        video(class='welcome__video' id='video__container' autoplay loop muted)
+            source(src=('/assets/images/night.webm') type='video/webm; codecs="vp8, vorbis"')
+            source(src=('/assets/images/night.mp4') type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
         include ../components/blocks/parallax/parallax
         .welcome__autorize.autorize Авторизироватся
         .welcome__center.welcome__center_author
@@ -27,6 +27,9 @@ block content
             .welcome__center-top
                 form.form-autorize(action="/" id='authorize' method='POST')
                     h1.form__title.title Авторизуйтесь
+                    - if (msg){
+                        .status= msg
+                    - } 
                     .form__login
                         input.form__login-input(type="text" name='login' required)
                         .form__login-pic
@@ -49,8 +52,5 @@ block content
             ul.welcome__buttons.navigation
                 li.navigation__button: a(href='#' class='navigation__link' id='toMain') На главную
                 li.navigation__button
-                    input(type='submit' form='authorize' class='navigation__link' value='Войти')
-        if (msg){
-            .status= msg
-        }        
+                    input(type='submit' form='authorize' class='navigation__link' value='Войти')      
         .welcome__copyright &#9400; Руслан Мустафин | Создано с любовью в Loftscool | 2017

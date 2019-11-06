@@ -15,6 +15,7 @@ router.get('/blog', ctrlBlog.getBlog);
 router.get('/about', ctrlAbout.getAbout);
 
 router.get('/portfolio', ctrlPortfolio.getPortfolio);
+router.post('/portfolio', ctrlPortfolio.feedbackForm);
 
 
 module.exports = router;
