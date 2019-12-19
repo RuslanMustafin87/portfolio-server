@@ -12,11 +12,11 @@ module.exports.addFeedback = function(req, res){
 
     item.save().then(
         item => {
-            return res.status(201).json({status: 'Запись успешно добавлена'});
+            res.status(201).json({status: 'Запись успешно добавлена'});
         },
         err => {
 
-            return res.status(404).json({status: 'Ошибка при добавлении записи ' + err});
+            res.status(404).json({status: 'Ошибка при добавлении записи ' + err});
         }
     )
 }

@@ -12,9 +12,9 @@ module.exports.feedbackForm = function (req, res) {
   const apiOptions = {
     server: 'http://localhost:3001'
   }
-
+  
   const pathApi = '/api/feedback';
-
+  
   const requestOptions = {
     url: apiOptions.server + pathApi,
     method: 'POST',
@@ -26,6 +26,15 @@ module.exports.feedbackForm = function (req, res) {
   }
 
   request(requestOptions, function (error, response, body) {
-    // res.redirect('/portfolio?msg=' + body.status)
+    //res.setHeader('Access-Control-Allow-Origin', '*');
+    //res.setHeader('Access-Control-Allow-Methods', '*');
+    //res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    //res.redirect('/portfolio?msg=' + body.status)
+    //res.set({
+    //  'Access-Control-Allow-Origin': '*',
+    //  'Access-Control-Allow-Methods': '*',
+    //  'Access-Control-Allow-Headers': 'Content-Type'
+    //});
+    res.end();
   })
 }
