@@ -26,15 +26,12 @@ module.exports.feedbackForm = function (req, res) {
   }
 
   request(requestOptions, function (error, response, body) {
-    //res.setHeader('Access-Control-Allow-Origin', '*');
-    //res.setHeader('Access-Control-Allow-Methods', '*');
-    //res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    //res.redirect('/portfolio?msg=' + body.status)
-    //res.set({
-    //  'Access-Control-Allow-Origin': '*',
-    //  'Access-Control-Allow-Methods': '*',
-    //  'Access-Control-Allow-Headers': 'Content-Type'
-    //});
-    res.end();
+    console.log(response);
+    console.log(error);
+    //if (!response.ok) {
+    //  res.status(404).json(error);
+    //  return;
+    //};
+    res.json(body);
   })
 }

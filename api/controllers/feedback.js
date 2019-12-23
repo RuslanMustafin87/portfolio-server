@@ -15,7 +15,6 @@ module.exports.addFeedback = function(req, res){
             res.status(201).json({status: 'Запись успешно добавлена'});
         },
         err => {
-
             res.status(404).json({status: 'Ошибка при добавлении записи ' + err});
         }
     )

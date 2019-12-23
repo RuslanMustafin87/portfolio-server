@@ -20,7 +20,7 @@ module.exports.setAdminAbout = function(req, res, next) {
       };
       
       request(requestOptions, function (error, response, body) {
-        res.end();
+        res.json(body);
       })
 
 }

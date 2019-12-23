@@ -1,3 +1,4 @@
+
 extends ../base
 
 block  var
@@ -25,11 +26,8 @@ block content
                 li.navigation__button: a(href='blog' class='navigation__link') Блог
         .welcome__center.welcome__center_login
             .welcome__center-top
-                form.form-autorize(action="/" id='authorize' method='POST')
+                form.form-autorize(action="http://localhost:3000/admin" id='authorize' method='POST')
                     h1.form__title.title Авторизуйтесь
-                    - if (msg){
-                        .status= msg
-                    - } 
                     .form__login
                         input.form__login-input(type="text" name='login' required)
                         .form__login-pic
@@ -52,5 +50,6 @@ block content
             ul.welcome__buttons.navigation
                 li.navigation__button: a(href='#' class='navigation__link' id='toMain') На главную
                 li.navigation__button
-                    input(type='submit' form='authorize' class='navigation__link' value='Войти')      
+                    //- input(type='submit' form='authorize' class='navigation__link' value='Войти')
+                    a.navigation__link(href='admin') Войти
         .welcome__copyright &#9400; Руслан Мустафин | Создано с любовью в Loftscool | 2017
