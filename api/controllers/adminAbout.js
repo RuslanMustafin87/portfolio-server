@@ -4,16 +4,15 @@ module.exports.addAdminAbout = function (req, res) {
 
     const Model = mongoose.model('adminabout');
 
-    let id;
-
     Model.find()
         .then(
             item => {
-                id = item[0]._id;
+                let id = item[0]._id;
+                return id;
             }
         )
         .then(
-            () => {
+            (id) => {
 
                 return Model.findByIdAndUpdate(id, req.body)
 
@@ -31,22 +30,4 @@ module.exports.addAdminAbout = function (req, res) {
                 });
             }
         )
-
-
-    //const id = '5dfa57adc1b3677b51087209';
-
-    //Model.findByIdAndUpdate(id, req.body)
-    //    .then(
-    //        item => {
-    //            console.log(id);
-    //            res.status(201).json({
-    //                status: 'Запись успешно изменена'
-    //            });
-    //        },
-    //        err => {
-    //            res.status(404).json({
-    //                status: 'Ошибка при добавлении записи ' + err
-    //            });
-    //        }
-    //    )
 }

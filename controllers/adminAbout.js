@@ -16,6 +16,13 @@ module.exports.setAdminAbout = function(req, res, next) {
           html: req.body.html,
           css: req.body.css,
           js: req.body.js,
+          python: req.body.python,
+          mysql: req.body.mysql,
+          node: req.body.node,
+          mongo: req.body.mongo,
+          git: req.body.git,
+          webpack: req.body.webpack,
+          linux: req.body.linux,
         }
       };
       

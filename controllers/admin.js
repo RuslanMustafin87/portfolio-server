@@ -6,10 +6,7 @@ const apiOptions = {
 }
 
 module.exports.getAdmin = function (req, res, next) {
-    //res.render('admin/admin', {
-    //    title: 'Admin'
-    //});
-
+    
     const pathApi = '/api/admin';
 
     const requestOptions = {

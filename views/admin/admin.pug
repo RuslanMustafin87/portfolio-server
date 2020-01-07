@@ -41,29 +41,40 @@ block content
                             .frontend__caption Workflow
                             .table__row
                                 .table__cell Git
-                                .table__cell.table__col 90
+                                .table__cell.table__col
+                                    input.panel-admin__about-input(value=`${data.git}` id='admin-input-git')
                                 .table__cell %
                             .table__row
                                 .table__cell Webpack
-                                .table__cell.table__col 80
+                                .table__cell.table__col
+                                    input.panel-admin__about-input(value=`${data.webpack}` id='admin-input-webpack')
                                 .table__cell %
                             .table__row
-                                .table__cell Gulp
-                                .table__cell.table__col 50
+                                .table__cell Linux
+                                .table__cell.table__col
+                                    input.panel-admin__about-input(value=`${data.linux}` id='admin-input-linux')
                                 .table__cell %
                         .block__frontend 
                             .frontend__caption Backend
                             .table__row
-                                .table__cell PHP
-                                .table__cell.table__col 50
+                                .table__cell Python
+                                .table__cell.table__col
+                                    input.panel-admin__about-input(value=`${data.python}` id='admin-input-python')
                                 .table__cell %
                             .table__row
                                 .table__cell Node.js
-                                .table__cell.table__col 60
+                                .table__cell.table__col
+                                    input.panel-admin__about-input(value=`${data.node}` id='admin-input-node')
+                                .table__cell %
+                            .table__row
+                                .table__cell MySQL
+                                .table__cell.table__col
+                                    input.panel-admin__about-input(value=`${data.mysql}` id='admin-input-mysql')
                                 .table__cell %
                             .table__row
                                 .table__cell Mongo.db
-                                .table__cell.table__col 50
+                                .table__cell.table__col
+                                    input.panel-admin__about-input(value=`${data.mongo}` id='admin-input-mongo')
                                 .table__cell %
                         button.admin__button.button__about Сохранить
                 li.panel-admin__item.panel-admin__blog
