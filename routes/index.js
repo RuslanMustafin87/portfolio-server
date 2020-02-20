@@ -7,6 +7,7 @@ const ctrlAbout = require('../controllers/about');
 const ctrlPortfolio = require('../controllers/portfolio');
 const ctrlAdmin = require('../controllers/admin');
 const ctrlAdminAbout = require('../controllers/adminAbout');
+const ctrlAdminAvatar = require('../controllers/adminAvatar');
 
 /* GET home page. */
 router.get('/', ctrlIndex.getIndex);
@@ -21,5 +22,6 @@ router.post('/portfolio', ctrlPortfolio.feedbackForm);
 
 router.get('/admin', ctrlAdmin.getAdmin);
 router.post('/adminAbout', ctrlAdminAbout.setAdminAbout);
+router.post('/adminAvatar', ctrlAdminAvatar.uploadAvatar);
 
 module.exports = router;

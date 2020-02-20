@@ -1,12 +1,11 @@
-const http = require('request');
-const path = require('path');
+const rp = require('request-promise');
 
 const apiOptions = {
     server: 'http://localhost:3001'
 }
 
 module.exports.getAdmin = function (req, res, next) {
-    
+
     const pathApi = '/api/admin';
 
     const requestOptions = {
@@ -19,7 +18,8 @@ module.exports.getAdmin = function (req, res, next) {
         title: 'Admin'
     }
 
-    http(requestOptions, function (error, response, body) {
-        res.render('admin/admin', Object.assign(sendObj, body));
-    })
+    rp(requestOptions)
+        .then((body) => {
+            res.render('admin/admin', Object.assign(sendObj, body));
+        })
 }

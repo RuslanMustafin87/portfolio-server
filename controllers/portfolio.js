@@ -1,20 +1,30 @@
 const request = require('request');
-const path = require('path');
+const rp = require('request-promise');
 
-  module.exports.getPortfolio = function (req, res) {
-    res.render('portfolio/portfolio', {
-      title: 'Express'
-    });
+const apiOptions = {
+  server: 'http://localhost:3001'
+}
+
+module.exports.getPortfolio = function (req, res) {
+
+  const pathApi = '/api/getAvatar';
+
+  const requestOptions = {
+    url: apiOptions.server + pathApi,
+    method: 'POST',
+    json: {}
   };
+
+  rp(requestOptions)
+    .then((body) => {
+      res.render('portfolio/portfolio', body);
+    })
+};
 
 module.exports.feedbackForm = function (req, res) {
 
-  const apiOptions = {
-    server: 'http://localhost:3001'
-  }
-  
   const pathApi = '/api/feedback';
-  
+
   const requestOptions = {
     url: apiOptions.server + pathApi,
     method: 'POST',
@@ -25,13 +35,8 @@ module.exports.feedbackForm = function (req, res) {
     }
   }
 
-  request(requestOptions, function (error, response, body) {
-    console.log(response);
-    console.log(error);
-    //if (!response.ok) {
-    //  res.status(404).json(error);
-    //  return;
-    //};
-    res.json(body);
-  })
+  rp(requestOptions)
+        .then((body) => {
+          res.json(body);
+        })
 }

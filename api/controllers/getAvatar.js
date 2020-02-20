@@ -1,16 +1,18 @@
 const mongoose = require('mongoose');
 
-module.exports.getAdmin = function (req, res) {
-
-    const Model = mongoose.model('adminabout');
+module.exports.getAvatar = function (req, res) {
+    const Model = mongoose.model('avatar');
+    
     Model.find()
         .then(items => {
 
             if (!items.length) {
-                res.status(404).json({})
+                res.status(404).json({
+
+                })
             } else {
                 res.status(200).json({
-                    data: items[0]
+                    picture: items[0]
                 });
             }
         })

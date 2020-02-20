@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-module.exports.addFeedback = function(req, res){
+module.exports.addFeedback = function (req, res) {
 
     const Model = mongoose.model('feedback');
 
@@ -12,10 +12,14 @@ module.exports.addFeedback = function(req, res){
 
     item.save().then(
         item => {
-            res.status(201).json({status: 'Запись успешно добавлена'});
+            res.status(201).json({
+                status: 'Запись успешно добавлена'
+            });
         },
         err => {
-            res.status(404).json({status: 'Ошибка при добавлении записи ' + err});
+            res.status(404).json({
+                status: 'Ошибка при добавлении записи ' + err
+            });
         }
     )
 }
