@@ -14,7 +14,8 @@ module.exports.setAvatar = function (req, res) {
         });
         item
             .save()
-            .then(pic => res.status(201).json(pic), e => res.status(400).json({
+            .then(pic => res.status(201).json('Картинка загружена'), 
+                e => res.status(400).json({
                 message: e.message,
                 error: e
             }))

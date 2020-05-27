@@ -10,18 +10,22 @@ const ctrlAdminAbout = require('../controllers/adminAbout');
 const ctrlAdminAvatar = require('../controllers/adminAvatar');
 
 /* GET home page. */
-router.get('/', ctrlIndex.getIndex);
-router.post('/', ctrlIndex.getAuth);
+router.route('/')
+        .get(ctrlIndex.getIndex)  
+        .post(ctrlIndex.getAuth);
 
 router.get('/blog', ctrlBlog.getBlog);
 
 router.get('/about', ctrlAbout.getAbout);
 
-router.get('/portfolio', ctrlPortfolio.getPortfolio);
-router.post('/portfolio', ctrlPortfolio.feedbackForm);
+router.route('/portfolio')
+        .get(ctrlPortfolio.getPortfolio)
+        .post(ctrlPortfolio.feedbackForm);
 
-router.get('/admin', ctrlAdmin.getAdmin);
-router.post('/adminAbout', ctrlAdminAbout.setAdminAbout);
-router.post('/adminAvatar', ctrlAdminAvatar.uploadAvatar);
+router.route('/admin')
+        .get(ctrlAdmin.getAdmin)
+        .post('/adminAbout', ctrlAdminAbout.setAdminAbout);
+
+router.post('/admin/adminAvatar', ctrlAdminAvatar.uploadAvatar);
 
 module.exports = router;

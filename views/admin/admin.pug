@@ -98,13 +98,16 @@ block content
                         button.admin__button.button__works Добавить
                 li.panel-admin__item.panel-admin__avatar
                     h2.panel-admin__title Страница смены аватара
-                    form.panel-admin__avatar-form.form-admin(method='POST' action='/adminAvatar')
-                        input.form-admin__file(type='file' name='avatar' id='avatar' placeholder='Загрузить фото')
+                    form.panel-admin__avatar-form.form-admin(id='admin_avatar' method='POST' action='/admin/adminAvatar' enctype="multipart/form-data")
+                        input.form-admin__file(type='file' name='avatar' id='avatar' accept='image/*,image/jpeg,image/jpg,image/png' onchange='handle()')
                         .form-admin__file-download.file-download-avatar
                             label.form-admin__file-label(for='avatar') 
                             span.form-admin__file-discription Загрузить фото
+                        .file-admin__input-test Файл не выбран
                         button.admin__button.button__avatar(type='submit') Добавить
-                li.modal-admin#modal__admin
-                        .modal-admin__window.modal__window
-                            p.modal-admin__text.modal__text
-                            button.admin__button.modal-admin__button.modal__close Закрыть
+        include ../components/blocks/modal/modal.pug
+        script
+            | function handle(){
+            |   const inputTest = document.querySelector('.file-admin__input-test');
+            |   inputTest.innerHTML = 'Файл выбран';
+            | }
