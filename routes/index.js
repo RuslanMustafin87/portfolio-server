@@ -11,20 +11,21 @@ const ctrlAdminAvatar = require('../controllers/adminAvatar');
 
 /* GET home page. */
 router.route('/')
-        .get(ctrlIndex.getIndex)  
-        .post(ctrlIndex.getAuth);
+	.get(ctrlIndex.getIndex)
+	.post(ctrlIndex.getAuth);
 
 router.get('/blog', ctrlBlog.getBlog);
+router.post('/blogArticles', ctrlBlog.getBlogArticles);
 
 router.get('/about', ctrlAbout.getAbout);
 
 router.route('/portfolio')
-        .get(ctrlPortfolio.getPortfolio)
-        .post(ctrlPortfolio.feedbackForm);
+	.get(ctrlPortfolio.getPortfolio)
+	.post(ctrlPortfolio.feedbackForm);
 
-router.route('/admin')
-        .get(ctrlAdmin.getAdmin)
-        .post('/adminAbout', ctrlAdminAbout.setAdminAbout);
+router.route('/admin').get(ctrlAdmin.getAdmin);
+
+router.post('/adminAbout', ctrlAdminAbout.setAdminAbout);
 
 router.post('/admin/adminAvatar', ctrlAdminAvatar.uploadAvatar);
 

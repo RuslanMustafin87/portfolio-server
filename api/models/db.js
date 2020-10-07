@@ -43,3 +43,4 @@ process.on('SIGINT', () => {
 require('./feedback');
 require('./adminAbout');
 require('./adminAvatar');
+require('./blog');

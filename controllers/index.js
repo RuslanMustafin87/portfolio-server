@@ -22,13 +22,14 @@ module.exports.getIndex = function (req, res) {
 
 module.exports.getAuth = function (req, res) {
 
-  if (!req.body.login || !req.body.password) {
-    return res.redirect('/login?msg=Заполните все поля');
-  }
-
-  if (!req.body.capcha) {
-    return res.redirect('/?msg=В доступе отказано');
-  }
-
-  res.redirect('/');
+  //if (!req.body.login || !req.body.password) {
+  //  return res.redirect('/login?msg=Заполните все поля');
+  //}
+//
+  //if (!req.body.capcha) {
+  //  return res.redirect('/?msg=В доступе отказано');
+  //}
+  console.log('yes');
+  res.render('admin/admin');
+  //res.redirect('/admin');
 }

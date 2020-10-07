@@ -39,5 +39,4 @@ module.exports.uploadAvatar = function (req, res) {
         });
 
     })
-
 }

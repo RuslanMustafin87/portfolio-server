@@ -5,7 +5,7 @@ module.exports.getAdmin = function (req, res) {
     const Model = mongoose.model('adminabout');
     Model.find()
         .then(
-            items => {
+            items => {0
 
                 if (!items.length) {
                     res.status(404).json({})
