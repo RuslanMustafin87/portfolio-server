@@ -11,7 +11,8 @@ module.exports.uploadAvatar = function (req, res) {
     form.uploadDir = path.join(process.cwd(), upload);
     
     form.parse(req, function (err, fields, files) {
-
+        console.log(fields);
+        console.log(files);
         let fileName = path.join(upload, files.avatar.name);
 
         fs.rename(files.avatar.path, fileName, function () {

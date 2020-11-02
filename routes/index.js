@@ -15,7 +15,6 @@ router.route('/')
 	.post(ctrlIndex.getAuth);
 
 router.get('/blog', ctrlBlog.getBlog);
-router.post('/blogArticles', ctrlBlog.getBlogArticles);
 
 router.get('/about', ctrlAbout.getAbout);
 

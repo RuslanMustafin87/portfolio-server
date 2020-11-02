@@ -1,6 +1,6 @@
 const mongoose = require('mongoose'),
     Schema = mongoose.Schema,
-    BlogSchema = new Schema({
+    ArticleSchema = new Schema({
         title: {
             type: String,
             required: [true, 'Укажите заголовок статьи']
@@ -17,4 +17,4 @@ const mongoose = require('mongoose'),
     });
 
 //просим mongoose сохранить модель для ее дальнейшего использования
-mongoose.model('blog', BlogSchema);
+mongoose.model('article', ArticleSchema);

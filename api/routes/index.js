@@ -5,8 +5,8 @@ const ctrlFeedback = require('../controllers/feedback');
 const ctrlAdmin = require('../controllers/admin');
 const ctrlAdminAbout = require('../controllers/adminAbout');
 const ctrlAdminAvatar = require('../controllers/adminAvatar');
+const ctrlArticles = require('../controllers/articles');
 const ctrlGetAvatar = require('../controllers/getAvatar');
-const ctrlBlogArticles = require('../controllers/blogArticles');
 
 router.post('/feedback', ctrlFeedback.addFeedback);
 
@@ -18,6 +18,11 @@ router.post('/adminAbout', ctrlAdminAbout.addAdminAbout);
 
 router.post('/adminAvatar', ctrlAdminAvatar.setAvatar);
 
-router.post('/blogArticles', ctrlBlogArticles.getBlogArticles);
+router.route('/articles')
+	.post(ctrlArticles.addArticle)
+	.delete(ctrlArticles.deleteArticle);
+
+router.route('/getArticles')
+	.post(ctrlArticles.getArticles)
 
 module.exports = router;

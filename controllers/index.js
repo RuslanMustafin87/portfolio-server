@@ -29,7 +29,6 @@ module.exports.getAuth = function (req, res) {
   //if (!req.body.capcha) {
   //  return res.redirect('/?msg=В доступе отказано');
   //}
-  console.log('yes');
   res.render('admin/admin');
   //res.redirect('/admin');
 }
